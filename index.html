@@ -11,40 +11,27 @@
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
-        <form class="row g-3 px-3 py-3 border-bottom border-dark-subtle">
+        <form class="pt-3">
 
-            <div class="g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="inputKilometers" class="col-form-label">Chilometri</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" id="kilometers" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
-                    <span id="kilometersHelpInline" class="form-text">
-                    Deve essere un numero maggiore di zero
-                    </span>
-                </div>
-                <div class="col-auto">
-                    <label for="inputAge" class="col-form-label">Età</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" id="age" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-auto">
-                    <span id="ageHelpInline" class="form-text">
-                    Deve essere un numero maggiore di zero
-                    </span>
-                </div>
-                <div class="col-auto py-3">
-                    <button type="submit" id="submit-button" class="btn btn-danger mb-3">Conferma</button>
-                </div>
-                
+            <div class="mb-3">
+                <label for="km" class="form-label">Chilometri</label>
+                <input type="number" class="form-control" id="km" aria-describedby="emailHelp">
+                <div id="kmHelp" class="form-text">Deve essere un numero maggiore di 0</div>
             </div>
 
+            <div class="mb-3">
+                <label for="age" class="form-label">Età</label>
+                <input type="number" class="form-control" id="age">
+                <div id="kmHelp" class="form-text">Deve essere un numero maggiore di 0</div>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Conferma</button>
+
         </form>
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
