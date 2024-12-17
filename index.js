@@ -1,6 +1,7 @@
 
 
 const submitButton = document.querySelector("form > button");
+
 submitButton.addEventListener("click", function(event) {
 
     event.preventDefault ();
@@ -71,4 +72,12 @@ closeButton.addEventListener("click", function(){
     }
 )
 
+const xCloseButton = document.querySelector("#x-close-button")
+xCloseButton.addEventListener("click", function(){
+
+    submitButton.disabled = false;
+    spinner.classList.toggle("d-none");
+    statusSpan.innerHTML = `Conferma`;
+    }
+)
 
