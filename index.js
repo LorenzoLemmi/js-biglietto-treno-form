@@ -35,4 +35,6 @@ submitButton.addEventListener("click", function(event) {
     }
 )
 
+const shoppingCartButton = document.querySelector("form > button")
+
 
