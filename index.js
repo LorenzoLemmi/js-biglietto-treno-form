@@ -8,6 +8,7 @@ submitButton.addEventListener("click", function(event) {
 
     const spinner = submitButton.querySelector("#spinner");
     const statusSpan = submitButton.querySelector(".status");
+    const modal = document.querySelector("#modal")
 
     spinner.classList.toggle("d-none");
     statusSpan.innerHTML = `Loading`;
@@ -19,6 +20,7 @@ submitButton.addEventListener("click", function(event) {
 
     if (isNaN(km) || (km == 0) || isNaN(age) || (age == 0)) {
             alert("Inserisci un numero maggiore di 0 sia per il chilometraggio che per l'età")
+            modal.classList.toggle("d-none")
         } else if (age <=17) {
             price = ((km * 0.21) - [(km * 0.21) / 100 * 20])
         } else if (age >=65) {
