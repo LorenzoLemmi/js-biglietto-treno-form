@@ -12,13 +12,12 @@ submitButton.addEventListener("click", function(event) {
     spinner.classList.toggle("d-none");
     statusSpan.innerHTML = `Loading`;
 
-    setTimeout(function () {
 
-        const km = parseFloat(document.querySelector("#km").value);
-        const age = parseFloat(document.querySelector("#age").value);
-        let price;
+    const km = parseFloat(document.querySelector("#km").value);
+    const age = parseFloat(document.querySelector("#age").value);
+    let price;
 
-        if (isNaN(km) || (km == 0) || isNaN(age) || (age == 0)) {
+    if (isNaN(km) || (km == 0) || isNaN(age) || (age == 0)) {
             alert("Inserisci un numero maggiore di 0 sia per il chilometraggio che per l'età")
         } else if (age <=17) {
             price = ((km * 0.21) - [(km * 0.21) / 100 * 20])
@@ -29,10 +28,11 @@ submitButton.addEventListener("click", function(event) {
         };
     
    
-        const roundedPrice = alert(`€ ${price.toFixed(2).replace(".", ",")}`);
-
-    }, 1000);
+    const roundedPrice = `€ ${price.toFixed(2).replace(".", ",")}`;
+    const modalPrice = document.querySelector("#price");
+    modalPrice.innerHTML = roundedPrice;
     
-})
+    }
+)
 
 
