@@ -50,6 +50,9 @@ submitButton.addEventListener("click", function(event) {
     }
 )
 
+const spinner = submitButton.querySelector("#spinner");
+const statusSpan = submitButton.querySelector(".status");
+
 const shoppingCartButton = document.querySelector("#shopping-cart-button")
 shoppingCartButton.addEventListener("click", function(){
 
