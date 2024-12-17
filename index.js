@@ -4,14 +4,9 @@ const submitButton = document.querySelector("form > button");
 submitButton.addEventListener("click", function(event) {
 
     event.preventDefault ();
-    submitButton.disabled = true;
 
     const spinner = submitButton.querySelector("#spinner");
     const statusSpan = submitButton.querySelector(".status");
-    const modal = document.querySelector("#modal")
-
-    spinner.classList.toggle("d-none");
-    statusSpan.innerHTML = `Loading`;
 
 
     const km = parseFloat(document.querySelector("#km").value);
@@ -19,13 +14,31 @@ submitButton.addEventListener("click", function(event) {
     let price;
 
     if (isNaN(km) || (km == 0) || isNaN(age) || (age == 0)) {
+
+            submitButton.disabled = true;
+            spinner.classList.toggle("d-none");
+            statusSpan.innerHTML = `Loading`;
             alert("Inserisci un numero maggiore di 0 sia per il chilometraggio che per l'età")
-            modal.classList.toggle("d-none")
+            
         } else if (age <=17) {
+
+            submitButton.disabled = true;
+            spinner.classList.toggle("d-none");
+            statusSpan.innerHTML = `Loading`;
             price = ((km * 0.21) - [(km * 0.21) / 100 * 20])
+
         } else if (age >=65) {
+
+            submitButton.disabled = true;
+            spinner.classList.toggle("d-none");
+            statusSpan.innerHTML = `Loading`;
             price = ((km * 0.21) - [(km * 0.21) / 100 * 40])
+
         } else {
+
+            submitButton.disabled = true;
+            spinner.classList.toggle("d-none");
+            statusSpan.innerHTML = `Loading`;
             price = (km * 0.21)
         };
     
