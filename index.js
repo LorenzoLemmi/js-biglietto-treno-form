@@ -35,6 +35,22 @@ submitButton.addEventListener("click", function(event) {
     }
 )
 
-const shoppingCartButton = document.querySelector("form > button")
+const shoppingCartButton = document.querySelector("#shopping-cart-button")
+shoppingCartButton.addEventListener("click", function(){
+
+    submitButton.disabled = false;
+    spinner.classList.toggle("d-none");
+    statusSpan.innerHTML = `Conferma`;
+    }
+)
+
+const closeButton = document.querySelector("#close-button")
+closeButton.addEventListener("click", function(){
+
+    submitButton.disabled = false;
+    spinner.classList.toggle("d-none");
+    statusSpan.innerHTML = `Conferma`;
+    }
+)
 
 
