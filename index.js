@@ -4,7 +4,7 @@ const submitButton = document.querySelector("form > button");
 submitButton.addEventListener("click", function(event) {
 
     event.preventDefault ();
-    submitButton.disable = true;
+    submitButton.disabled = true;
 
     const spinner = submitButton.querySelector("#spinner");
     const statusSpan = submitButton.querySelector(".status");
