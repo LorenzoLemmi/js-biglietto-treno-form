@@ -97,6 +97,7 @@ xCloseButton.addEventListener("click", function(){
         shoppingCartButton.disabled = false;
         closeButton.classList.toggle("d-none");
         shoppingCartButton.classList.toggle("d-none");
+        modalTitle.innerHTML = `Riepilogo`;
         }, 1000);
 
     }
