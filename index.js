@@ -1,5 +1,5 @@
 
-const modalTitle = document.querySelector("exampleModalLabel");
+const modalTitle = document.querySelector("#exampleModalLabel");
 const modalPrice = document.querySelector("#price");
 const closeButton = document.querySelector("#close-button")
 const xCloseButton = document.querySelector("#x-close-button")
@@ -30,7 +30,8 @@ submitButton.addEventListener("click", function(event) {
             shoppingCartButton.classList.toggle("d-none");
             closeButton.disabled = true;
             shoppingCartButton.disabled = true;
-            
+            modalTitle.innerHTML = `ATTENZIONE`
+            modalPrice.innerHTML = `Per favore riempi i campi con un numero maggiore di 0`
 
         } else if (age <=17) {
 
