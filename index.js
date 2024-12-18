@@ -1,5 +1,6 @@
 
-
+const modalTitle = document.querySelector("exampleModalLabel");
+const modalPrice = document.querySelector("#price");
 const closeButton = document.querySelector("#close-button")
 const xCloseButton = document.querySelector("#x-close-button")
 const shoppingCartButton = document.querySelector("#shopping-cart-button")
@@ -14,7 +15,7 @@ submitButton.addEventListener("click", function(event) {
 
     event.preventDefault ();
 
-    
+
     const km = parseFloat(document.querySelector("#km").value);
     const age = parseFloat(document.querySelector("#age").value);
     let price;
@@ -24,8 +25,14 @@ submitButton.addEventListener("click", function(event) {
             submitButton.disabled = true;
             spinner.classList.toggle("d-none");
             statusSpan.innerHTML = `Loading`;
+
+            closeButton.classList.toggle("d-none");
+            shoppingCartButton.classList.toggle("d-none");
+            closeButton.disabled = true;
+            shoppingCartButton.disabled = true;
             
             
+
         } else if (age <=17) {
 
             submitButton.disabled = true;
@@ -50,7 +57,6 @@ submitButton.addEventListener("click", function(event) {
     
    
     const roundedPrice = `€ ${price.toFixed(2).replace(".", ",")}`;
-    const modalPrice = document.querySelector("#price");
     modalPrice.innerHTML = roundedPrice;
     
     }
@@ -78,6 +84,14 @@ xCloseButton.addEventListener("click", function(){
     submitButton.disabled = false;
     spinner.classList.toggle("d-none");
     statusSpan.innerHTML = `Conferma`;
+    setTimeout(function() {
+
+        closeButton.disabled = false;
+        shoppingCartButton.disabled = false;
+        closeButton.classList.toggle("d-none");
+        shoppingCartButton.classList.toggle("d-none");
+        }, 1000);
+
     }
 )
 
