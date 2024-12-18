@@ -1,16 +1,16 @@
-
+// Modal constants
 const modalTitle = document.querySelector("#exampleModalLabel");
 const modalPrice = document.querySelector("#price");
 const closeButton = document.querySelector("#close-button")
 const xCloseButton = document.querySelector("#x-close-button")
 const shoppingCartButton = document.querySelector("#shopping-cart-button")
 
-
+// Submit-button constants
 const submitButton = document.querySelector("form > button");
 const spinner = submitButton.querySelector("#spinner");
 const statusSpan = submitButton.querySelector(".status");
 
-
+// Event on submit-button click
 submitButton.addEventListener("click", function(event) {
 
     event.preventDefault ();
@@ -61,8 +61,9 @@ submitButton.addEventListener("click", function(event) {
     
     }
 )
+// End
 
-
+// Event on Shopping-cart-button click
 shoppingCartButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
@@ -70,7 +71,10 @@ shoppingCartButton.addEventListener("click", function(){
     statusSpan.innerHTML = `Conferma`;
     }
 )
+// End
 
+
+// Event on Close-button click
 closeButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
@@ -78,7 +82,10 @@ closeButton.addEventListener("click", function(){
     statusSpan.innerHTML = `Conferma`;
     }
 )
+// End
 
+
+// Event on X-close-button click
 xCloseButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
@@ -94,4 +101,5 @@ xCloseButton.addEventListener("click", function(){
 
     }
 )
+// End
 
