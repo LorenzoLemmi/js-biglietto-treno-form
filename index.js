@@ -57,7 +57,7 @@ submitButton.addEventListener("click", function(event) {
     
    
     const roundedPrice = `€ ${price.toFixed(2).replace(".", ",")}`;
-    modalPrice.innerHTML = roundedPrice;
+    modalPrice.innerHTML = `Chilometri: ${km} <br> Età: ${age} <br> Prezzo: ${roundedPrice}`;
     
     }
 )
