@@ -1,15 +1,20 @@
 
 
+const closeButton = document.querySelector("#close-button")
+const xCloseButton = document.querySelector("#x-close-button")
+const shoppingCartButton = document.querySelector("#shopping-cart-button")
+
+
 const submitButton = document.querySelector("form > button");
+const spinner = submitButton.querySelector("#spinner");
+const statusSpan = submitButton.querySelector(".status");
+
 
 submitButton.addEventListener("click", function(event) {
 
     event.preventDefault ();
 
-    const spinner = submitButton.querySelector("#spinner");
-    const statusSpan = submitButton.querySelector(".status");
-
-
+    
     const km = parseFloat(document.querySelector("#km").value);
     const age = parseFloat(document.querySelector("#age").value);
     let price;
@@ -19,7 +24,7 @@ submitButton.addEventListener("click", function(event) {
             submitButton.disabled = true;
             spinner.classList.toggle("d-none");
             statusSpan.innerHTML = `Loading`;
-            alert("Inserisci un numero maggiore di 0 sia per il chilometraggio che per l'età")
+            
             
         } else if (age <=17) {
 
@@ -51,10 +56,7 @@ submitButton.addEventListener("click", function(event) {
     }
 )
 
-const spinner = submitButton.querySelector("#spinner");
-const statusSpan = submitButton.querySelector(".status");
 
-const shoppingCartButton = document.querySelector("#shopping-cart-button")
 shoppingCartButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
@@ -63,7 +65,6 @@ shoppingCartButton.addEventListener("click", function(){
     }
 )
 
-const closeButton = document.querySelector("#close-button")
 closeButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
@@ -72,7 +73,6 @@ closeButton.addEventListener("click", function(){
     }
 )
 
-const xCloseButton = document.querySelector("#x-close-button")
 xCloseButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
