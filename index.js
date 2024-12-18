@@ -31,7 +31,6 @@ submitButton.addEventListener("click", function(event) {
             closeButton.disabled = true;
             shoppingCartButton.disabled = true;
             
-            
 
         } else if (age <=17) {
 
