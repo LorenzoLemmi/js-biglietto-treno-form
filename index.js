@@ -1,5 +1,5 @@
 // Modal constants
-const modalTitle = document.querySelector("#exampleModalLabel");
+const modalTitle = document.querySelector("#modal-title");
 const modalPrice = document.querySelector("#price");
 const closeButton = document.querySelector("#close-button")
 const xCloseButton = document.querySelector("#x-close-button")
@@ -33,6 +33,25 @@ submitButton.addEventListener("click", function(event) {
             modalTitle.innerHTML = `ATTENZIONE`
             modalPrice.innerHTML = `Per favore riempi i campi con un numero maggiore di 0`
 
+            // Event on X-close-button click of modal when form fields are empty or 0
+            xCloseButton.addEventListener("click", function(){
+
+                submitButton.disabled = false;
+                statusSpan.innerHTML = `Conferma`;
+                setTimeout(function() {
+
+                    closeButton.disabled = false;
+                    shoppingCartButton.disabled = false;
+                    closeButton.classList.toggle("d-none");
+                    shoppingCartButton.classList.toggle("d-none");
+                    modalTitle.innerHTML = `Riepilogo`;
+                    }, 1000);
+
+                }
+            )
+            // End
+
+
         } else if (age <=17) {
 
             submitButton.disabled = true;
@@ -63,18 +82,8 @@ submitButton.addEventListener("click", function(event) {
 )
 // End
 
-// Event on Shopping-cart-button click
-shoppingCartButton.addEventListener("click", function(){
 
-    submitButton.disabled = false;
-    spinner.classList.toggle("d-none");
-    statusSpan.innerHTML = `Conferma`;
-    }
-)
-// End
-
-
-// Event on Close-button click
+// Event on Close-button click of modal when form fields are right
 closeButton.addEventListener("click", function(){
 
     submitButton.disabled = false;
@@ -91,15 +100,6 @@ xCloseButton.addEventListener("click", function(){
     submitButton.disabled = false;
     spinner.classList.toggle("d-none");
     statusSpan.innerHTML = `Conferma`;
-    setTimeout(function() {
-
-        closeButton.disabled = false;
-        shoppingCartButton.disabled = false;
-        closeButton.classList.toggle("d-none");
-        shoppingCartButton.classList.toggle("d-none");
-        modalTitle.innerHTML = `Riepilogo`;
-        }, 1000);
-
     }
 )
 // End
