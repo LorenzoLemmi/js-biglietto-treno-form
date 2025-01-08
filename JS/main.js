@@ -1,9 +1,9 @@
 // Modal constants
 const modalTitle = document.querySelector("#modal-title");
 const modalPrice = document.querySelector("#price");
-const closeButton = document.querySelector("#close-button")
-const xCloseButton = document.querySelector("#x-close-button")
-const shoppingCartButton = document.querySelector("#shopping-cart-button")
+const closeButton = document.querySelector("#close-button");
+const xCloseButton = document.querySelector("#x-close-button");
+const shoppingCartButton = document.querySelector("#shopping-cart-button");
 
 // Submit-button constants
 const submitButton = document.querySelector("form > button");
@@ -30,11 +30,14 @@ submitButton.addEventListener("click", function(event) {
             shoppingCartButton.classList.toggle("d-none");
             closeButton.disabled = true;
             shoppingCartButton.disabled = true;
-            modalTitle.innerHTML = `ATTENZIONE`
-            modalPrice.innerHTML = `Per favore riempi i campi con un numero maggiore di 0`
+            modalTitle.innerHTML = `ATTENZIONE`;
+            modalPrice.innerHTML = `Per favore riempi i campi con un numero maggiore di 0`;
 
             // Event on X-close-button click of modal when form fields are empty or 0
-            xCloseButton.addEventListener("click", function(){
+            xCloseButton.addEventListener("click", function(event){
+
+                event.preventDefault ();
+
 
                 submitButton.disabled = false;
                 statusSpan.innerHTML = `Conferma`;
@@ -57,21 +60,21 @@ submitButton.addEventListener("click", function(event) {
             submitButton.disabled = true;
             spinner.classList.toggle("d-none");
             statusSpan.innerHTML = `Loading`;
-            price = ((km * 0.21) - [(km * 0.21) / 100 * 20])
+            price = ((km * 0.21) - [(km * 0.21) / 100 * 20]);
 
         } else if (age >=65) {
 
             submitButton.disabled = true;
             spinner.classList.toggle("d-none");
             statusSpan.innerHTML = `Loading`;
-            price = ((km * 0.21) - [(km * 0.21) / 100 * 40])
+            price = ((km * 0.21) - [(km * 0.21) / 100 * 40]);
 
         } else {
 
             submitButton.disabled = true;
             spinner.classList.toggle("d-none");
             statusSpan.innerHTML = `Loading`;
-            price = (km * 0.21)
+            price = (km * 0.21);
         };
     
    
@@ -84,7 +87,10 @@ submitButton.addEventListener("click", function(event) {
 
 
 // Event on Close-button click of modal when form fields are right
-closeButton.addEventListener("click", function(){
+closeButton.addEventListener("click", function(event){
+
+    event.preventDefault ();
+
 
     submitButton.disabled = false;
     spinner.classList.toggle("d-none");
@@ -95,7 +101,10 @@ closeButton.addEventListener("click", function(){
 
 
 // Event on X-close-button click
-xCloseButton.addEventListener("click", function(){
+xCloseButton.addEventListener("click", function(event){
+
+    event.preventDefault ();
+
 
     submitButton.disabled = false;
     spinner.classList.toggle("d-none");
@@ -103,4 +112,3 @@ xCloseButton.addEventListener("click", function(){
     }
 )
 // End
-
